@@ -4,8 +4,21 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ["Title of your project?", "Please select a license type.", "Provide a brief description.", "Provide installation instructions.", "Provide usage instructions.", "Provide contribution guidelines.", "Provide test instructions."];
-
+const questions = [
+    ["Title of your project?", 'input', 'title'],
+    ["Please select a license type.", 'list', 'license', ["MIT", "GNU GPL V3", "CC Attribution", "CC Attribution-NonCommercial", "CC Attribution-NonCommerical-NoDerivatives"]],
+    [ "Provide a brief description.", 'input', 'description'],
+    ["Provide installation instructions.", 'input', 'installation'],
+    ["Provide usage instructions.", 'input', 'usage'],
+    ["Provide contribution guidelines.", 'input', 'contribution'],
+    ["Provide test instructions.", 'input', 'test']
+];
+for (const [question, type, name, choices] of questions) {
+    console.log(question)
+    console.log(type)
+    console.log(name)
+    console.log(choices)
+}
 
 
 // TODO: Create a function to write README file
@@ -58,7 +71,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     writeToFile()
- }
+}
 
 // Function call to initialize app
-init();
+// init();
