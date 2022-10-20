@@ -29,7 +29,7 @@ function init() {
                 type: 'list',
                 message: questions[1],
                 name: 'license',
-                choices: ["MIT", "GNU GPL V3", "CC Attribution", "CC Attribution-NonCommercial", "CC Attribution-NonCommerical-NoDerivatives"]
+                choices: ["MIT", "APACHE2.0", "GPL 3.0", "BSD 3", "None"]
             },
             {
                 type: 'input',
