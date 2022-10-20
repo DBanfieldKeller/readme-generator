@@ -2,9 +2,19 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = ["Title of your project?", "Please select a license type.", "Provide a brief description.", "Provide installation instructions.", "Provide usage instructions.", "Provide contribution guidelines.", "Provide test instructions."];
+const questions = [
+    "Title of your project?",
+    "Please select a license type.",
+    "Provide a brief description.", 
+    "Provide installation instructions.", 
+    "Provide usage instructions.", 
+    "Provide contribution guidelines.", 
+    "Provide test instructions.", 
+    "What is your github username?", 
+    "What is your email address?"];
 
 
 
@@ -28,7 +38,7 @@ function init() {
                 type: 'list',
                 message: questions[1],
                 name: 'license',
-                choices: ["MIT", "GNU GPL V3", "CC Attribution", "CC Attribution-NonCommercial", "CC Attribution-NonCommerical-NoDerivatives"]
+                choices: ["MIT", "APACHE_2.0", "GPL_3.0", "BSD_3", "None"]
             },
             {
                 type: 'input',
@@ -54,11 +64,21 @@ function init() {
                 type: 'input',
                 message: questions[6],
                 name: 'test',
+            },
+            {
+                type: 'input',
+                message: questions[7],
+                name: 'username'
+            },
+            {
+                type: 'input',
+                message: questions[8],
+                name: 'email'
             }
         ])
         .then((response) => {
-            JSON.stringify(response);
-            writeToFile(response.title, JSON.stringify(response))
+            const newReadme = generateMarkdown(response)
+            writeToFile(response.title, newReadme)
             console.log(response);
         })
 }
