@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ["Title of your project?", "Please select a license type.", "Provide a brief description.", "Provide installation instructions.", "Provide usage instructions.", "Provide contribution guidelines.", "Provide test instructions."];
+const questions = ["Title of your project?", "Please select a license type.", "Provide a brief description.", "Provide installation instructions.", "Provide usage instructions.", "Provide contribution guidelines.", "Provide test instructions.", "What is your github username?", "What is your email address?"];
 
 
 
@@ -54,6 +54,16 @@ function init() {
                 type: 'input',
                 message: questions[6],
                 name: 'test',
+            },
+            {
+                type: 'input',
+                message: questions[7],
+                name: 'username'
+            },
+            {
+                type: 'input',
+                message: questions[8],
+                name: 'email'
             }
         ])
         .then((response) => {
