@@ -7,18 +7,23 @@ const fs = require('fs');
 const questions = [
     ["Title of your project?", 'input', 'title'],
     ["Please select a license type.", 'list', 'license', ["MIT", "GNU GPL V3", "CC Attribution", "CC Attribution-NonCommercial", "CC Attribution-NonCommerical-NoDerivatives"]],
-    [ "Provide a brief description.", 'input', 'description'],
+    ["Provide a brief description.", 'input', 'description'],
     ["Provide installation instructions.", 'input', 'installation'],
     ["Provide usage instructions.", 'input', 'usage'],
     ["Provide contribution guidelines.", 'input', 'contribution'],
     ["Provide test instructions.", 'input', 'test']
 ];
 for (const [question, type, name, choices] of questions) {
-    console.log(question)
-    console.log(type)
-    console.log(name)
-    console.log(choices)
+    return {
+        type: type,
+        message: question,
+        name: name,
+        choices: choices,
+    }
 }
+
+inquirer
+    .prompt([])
 
 
 // TODO: Create a function to write README file
