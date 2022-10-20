@@ -12,10 +12,26 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  let licenseLink
   switch (license) {
     case 'MIT':
-      const licenseLink = 3
+      licenseLink = '<https://opensource.org/licenses/MIT>';
+      break;
+    case 'APACHE_2.0':
+      licenseLink = '<http://www.apache.org/licenses/LICENSE-2.0>';
+      break;
+    case 'GPL_3.0' :
+      licenseLink = '<http://www.gnu.org/licenses/>';
+      break;
+    case 'BSD_3' :
+      licenseLink = '<https://opensource.org/licenses/BSD-3-Clause>';
+      break;
+    case 'None' :
+      licenseLink = ''
+      break;
+    
   }
+  return licenseLink
 }
 
 // TODO: Create a function that returns the license section of README
@@ -24,8 +40,10 @@ function renderLicenseSection(license) { }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
   ${renderLicenseBadge(data.license)}
+  
   ## Description
   ${data.description}
  ## Table of Contents
@@ -42,14 +60,15 @@ function generateMarkdown(data) {
   ${data.usage}
  ## License
  ${renderLicenseBadge(data.license)}
+ ${renderLicenseLink(data.license)}
  
- This application is covered by the ${data.license} license.
  ## Tests
  ${data.test}
  ## Questions
  If you have any questions, please feel free to reach out via email or at my github below
+ 
  ${data.email}
- (https://github.com/${data.username})
+ https://github.com/${data.username}
 `;
 }
 
