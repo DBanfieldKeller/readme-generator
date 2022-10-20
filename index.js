@@ -5,7 +5,16 @@ const fs = require('fs');
 const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = ["Title of your project?", "Please select a license type.", "Provide a brief description.", "Provide installation instructions.", "Provide usage instructions.", "Provide contribution guidelines.", "Provide test instructions.", "What is your github username?", "What is your email address?"];
+const questions = [
+    "Title of your project?",
+    "Please select a license type.",
+    "Provide a brief description.", 
+    "Provide installation instructions.", 
+    "Provide usage instructions.", 
+    "Provide contribution guidelines.", 
+    "Provide test instructions.", 
+    "What is your github username?", 
+    "What is your email address?"];
 
 
 
@@ -29,7 +38,7 @@ function init() {
                 type: 'list',
                 message: questions[1],
                 name: 'license',
-                choices: ["MIT", "APACHE2.0", "GPL 3.0", "BSD 3", "None"]
+                choices: ["MIT", "APACHE_2.0", "GPL_3.0", "BSD_3", "None"]
             },
             {
                 type: 'input',
