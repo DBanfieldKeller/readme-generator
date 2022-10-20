@@ -8,8 +8,15 @@ const questions = ["Title of your project?", "Please select a license type.", "P
 
 
 
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(`${fileName}.md`, data, (err) => err ? console.error(err) : console.log('success!!!'))
+}
+
+
+// TODO: Create a function to initialize app
+function init() {
     inquirer
         .prompt([
             {
@@ -51,14 +58,10 @@ function writeToFile(fileName, data) {
         ])
         .then((response) => {
             JSON.stringify(response);
+            writeToFile(response.title, JSON.stringify(response))
             console.log(response);
         })
 }
-
-// TODO: Create a function to initialize app
-function init() {
-    writeToFile()
- }
 
 // Function call to initialize app
 init();
