@@ -23,8 +23,7 @@ To run this code navigate to the root folder and run the following command
 ```
 node index.js
 ```
-
-<iframe src="https://drive.google.com/file/d/1rZ8oiVCsyafsaXzujuod1fcobz6s8vYp/preview" width="640" height="480"></iframe>
+[![Video Demonstration](./Assets/Screenshot.PNG)]({https://drive.google.com/file/d/1rZ8oiVCsyafsaXzujuod1fcobz6s8vYp/preview} "Video Preview")
 
 ## License
 This application is not under any license.
