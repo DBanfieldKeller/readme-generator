@@ -23,7 +23,10 @@ To run this code navigate to the root folder and run the following command
 ```
 node index.js
 ```
-[![Video Demonstration](./assets/Screenshot.PNG)]
+[![Screenshot](./assets/Screenshot.PNG)]
+
+Video demo at the following link:
+https://drive.google.com/file/d/1rZ8oiVCsyafsaXzujuod1fcobz6s8vYp/preview
 
 ## License
 This application is not under any license.
