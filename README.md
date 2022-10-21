@@ -23,7 +23,7 @@ To run this code navigate to the root folder and run the following command
 ```
 node index.js
 ```
-[![Video Demonstration](./Assets/Screenshot.PNG)]
+[![Video Demonstration](./assets/Screenshot.PNG)]
 
 ## License
 This application is not under any license.
